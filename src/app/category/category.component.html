@@ -1,0 +1,55 @@
+<div class="catcon" *ngFor="let b of categories">
+  <div class="wd50">
+    <div>
+      <p class="mt20"> <a href="/home">Home Page</a> / {{b.name}} </p>
+    </div>
+    <div class="col-lg-6 m30" [routerLink]="'/categories/'+b.id" >
+      <div class="cont" >
+          <div  class="container">
+            <div class="row">
+              <div class="col-md-1">
+                <img src="assets/icons/{{b.icon}}">
+              </div>
+                <div class="col-md-10 ml20">
+                    <h1 class="hmr10"><b>{{b.name}} ( {{postsDetail.length}} )</b></h1>
+                    <p class="pstl">{{b.description}}</p>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="catcon" *ngFor="let a of postsDetail">
+  <div class="wd50">
+    <mat-card class="m30">
+      <mat-card-content>
+        <div class="m1530">
+          <h1 class="h1cl"  [routerLink]="'/postdetail/'+a.id" >{{a.title}}</h1>
+          <p>
+            <span class="scl"> {{a.description.substr(0,280)}}...
+              <a class="acl" [routerLink]="'/postdetail/'+a.id"> read more </a>
+            </span>
+          </p>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-1">
+                <img class="imgcl" src="assets/images/profile.png">
+              </div>
+              <div class="col-md-11">
+                <p>Written By: <span class="scl2">  {{a.author}} </span></p>
+                <p> {{a.date | date:'MMMM d y'}} </p>
+              </div>
+            </div>
+          </div>
+          <p>{{a.content}}</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>

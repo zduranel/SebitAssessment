@@ -1,0 +1,25 @@
+<div class="cont">
+  <div class="wd50">
+    <div>
+      <p>
+        <a href="/home">Home Page</a> / <a href="/categories/{{ postDetail?.category_id }}"> Geri </a> / {{ postDetail?.id }} </p>
+    </div>
+
+    <mat-card class="matc">
+      <mat-card-content>
+        <div [routerLink]="'/view/'+postDetail?.id">
+          <h1 class="blu">{{postDetail?.title}}</h1>
+          <p class="mt35"><span class="stf"> {{postDetail?.description}}</span></p>
+            <div class="col-md-6">
+              <p class="pcl mt45"><span class="scl">{{postDetail?.author}}</span> <span class="datecl">{{postDetail?.date | date:'d MMMM y'}}</span>
+              </p>
+            </div>
+            <p class="mt15">Tags: <span class="tags">foo </span> <span class="tags">bar </span> <span class="tags">baz </span></p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
